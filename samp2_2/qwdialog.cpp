@@ -6,6 +6,9 @@ QWDialog::QWDialog(QWidget *parent)
     , ui(new Ui::QWDialog)
 {
     ui->setupUi(this);
+    connect(ui->rBtnBlue, SIGNAL(clicked()), this, SLOT(setTextFontColor()));
+    connect(ui->rBtnRed, SIGNAL(clicked()), this, SLOT(setTextFontColor()));
+    connect(ui->rBtnBlack, SIGNAL(clicked()), this, SLOT(setTextFontColor()));
 }
 
 QWDialog::~QWDialog()
@@ -33,4 +36,26 @@ void QWDialog::on_chkBoxBold_clicked(bool checked)
     QFont font = ui->txtEdit->font();
     font.setBold(checked);
     ui->txtEdit->setFont(font);
+}
+
+void QWDialog::setTextFontColor()
+{
+    QPalette plet = ui->txtEdit->palette();
+    if (ui->rBtnBlue->isChecked())
+    {
+        plet.setColor(QPalette::Text, Qt::blue);
+    }
+    else if (ui->rBtnRed->isChecked())
+    {
+        plet.setColor(QPalette::Text, Qt::red);
+    }
+    else if (ui->rBtnBlack->isChecked())
+    {
+        plet.setColor(QPalette::Text, Qt::black);
+    }
+    else
+    {
+        plet.setColor(QPalette::Text, Qt::black);
+    }
+    ui->txtEdit->setPalette(plet);
 }

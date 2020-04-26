@@ -85,7 +85,7 @@
       </font>
      </property>
      <property name="plainText">
-      <string>Hello, World. It is my demo.</string>
+      <string>Hello, World.</string>
      </property>
     </widget>
    </item>
@@ -143,5 +143,54 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnOK</sender>
+   <signal>clicked()</signal>
+   <receiver>QWDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>38</x>
+     <y>577</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>564</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>QWDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>573</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>332</x>
+     <y>574</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>QWDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>738</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>648</x>
+     <y>575</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
